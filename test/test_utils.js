@@ -48,7 +48,7 @@ function formatOptions(options) {
 
   options.cmd = options.cmd || path.join(__dirname, 'start_cli.js');
   options.opt = options.opt || {};
-  options.opt.cwd = options.opt.cwd || options.tmpDir;
+  // options.opt.cwd = options.opt.cwd || options.tmpDir;
   options.opt.env = options.opt.env || Object.assign({}, process.env);
   options.opt.env.TEST_UTILS_CLI = options.baseDir;
 

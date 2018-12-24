@@ -4,7 +4,7 @@ const testUtils = require('./test_utils');
 
 describe('test/index.test.js', () => {
 
-  it.only('should work', () => {
+  it('should work', () => {
     return testUtils.run('my-command', { args: [ '--test=abc' ] })
       .debug()
       .expect('stdout', /\[MyCommand\] context: true true/)
