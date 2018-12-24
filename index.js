@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = 'hi, developer';
+module.exports = require('./lib/command');
