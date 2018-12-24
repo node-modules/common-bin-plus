@@ -12,14 +12,13 @@ const { Coffee } = require('coffee');
  * ```js
  * await testUtils.run()
  *   .write('example\n')
- *   .expectFile('README.md', 'this is desc')
- *   .expectFile('package.json', { name: 'example' })
+ *   .writeKey('DOWN', 'ENTER')
  *   .end();
  * ```
  *
  * @param {String} [baseDir] - cli base dir, support relative path, default to `process.cwd()`
  * @param {Object} [options] - coffee options
- * @return {CliCoffee} return coffee instance
+ * @return {Coffee} return coffee instance
  */
 exports.run = (baseDir, options) => {
   // support `testUtils.run('app')`
@@ -30,7 +29,7 @@ exports.run = (baseDir, options) => {
   }
   options = formatOptions(options);
 
-  return new Coffee(options);
+  return new Coffee(options).waitForPrompt();
 };
 
 function formatOptions(options) {

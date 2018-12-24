@@ -1,7 +1,5 @@
 'use strict';
 
-const Logger = require('..').Logger;
-
 describe('test/logger.test.js', () => {
 
   it('should work', () => {
