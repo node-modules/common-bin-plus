@@ -5,8 +5,7 @@ const Command = require('../../../');
 class MyCommand extends Command {
 
   async run() {
-
-    const answers = await this.prompt([
+    let answers = await this.prompt([
       {
         type: 'input',
         name: 'name',
@@ -18,6 +17,14 @@ class MyCommand extends Command {
         choices: [ 'empty', 'simple', 'plugin', 'framework' ],
       },
     ]);
+
+    this.logger.info(answers);
+
+    answers = await this.prompt({
+      type: 'input',
+      name: 'description',
+      message: 'Description:',
+    });
 
     this.logger.info(answers);
   }

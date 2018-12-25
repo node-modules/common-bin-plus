@@ -8,8 +8,14 @@ class MyCommand extends Command {
     opts.test = {
       type: 'string',
       description: 'some argv',
+      alias: 't',
     };
     return opts;
+  }
+
+  initContext(context) {
+    context.hello = true;
+    return context;
   }
 
   async run(context) {
@@ -17,9 +23,8 @@ class MyCommand extends Command {
 
     this.logger.info('context:', this.context === this.context, this.context === context); // eslint-disable-line no-self-compare
     this.logger.info('test:', context.argv.test);
-    this.logger.warn('this is a warn');
-    this.logger.error(new Error('this is an error'));
-    this.logger.debug('this is a debug');
+    this.logger.info('alias:', context.argv.t);
+    this.logger.info('hello:', context.hello);
   }
 }
 
