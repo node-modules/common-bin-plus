@@ -39,7 +39,7 @@
     "pkgfiles": "egg-bin pkgfiles"
   },
   "ci": {
-    "version": "8, 10"
+    "version": "8, 10, 11"
   },
   "eslintIgnore": [
     "coverage",

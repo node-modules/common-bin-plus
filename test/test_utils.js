@@ -46,7 +46,7 @@ function formatOptions(options) {
     options.baseDir = path.join(process.cwd(), 'test/fixtures', options.baseDir);
   }
 
-  options.cmd = options.cmd || path.join(__dirname, 'start_cli.js');
+  options.cmd = options.cmd || path.join(__dirname, './fixtures/start_cli.js');
   options.opt = options.opt || {};
   // options.opt.cwd = options.opt.cwd || options.tmpDir;
   options.opt.env = options.opt.env || Object.assign({}, process.env);

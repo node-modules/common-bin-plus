@@ -1,6 +1,6 @@
 # common-bin-plus
 
-advanced common-bin for cli usage
+advanced [common-bin](https://github.com/node-modules/common-bin) for cli usage
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -22,8 +22,69 @@ advanced common-bin for cli usage
 [download-image]: https://img.shields.io/npm/dm/common-bin-plus.svg?style=flat-square
 [download-url]: https://npmjs.org/package/common-bin-plus
 
-## Usage
+## Installation
 
 ```bash
 npm i common-bin-plus --save
+```
+
+## Feature
+
+### Logger
+
+https://github.com/node-modules/zlogger
+
+```js
+this.logger.info('hello info level');
+this.logger.warn('hello warn level');
+this.logger.error(new Error('hello error level'));
+this.logger.debug('hello debug level');
+```
+
+`debug` log is disabled by default, you could enable it by:
+
+- command line argv: `--verbose`
+- process env: `DEBUG=CLI`
+- programmatically: `logger.level = 'DEBUG'`
+
+## Prompt
+
+```js
+const answers = await this.prompt([
+  {
+    type: 'input',
+    name: 'name',
+    message: 'What is your name:',
+  }, {
+    type: 'list',
+    name: 'type',
+    message: 'Choose a boilerplate:',
+    choices: [ 'empty', 'simple', 'plugin', 'framework' ],
+  },
+]);
+
+this.logger.info(answers);
+```
+
+## Unit Testing
+
+Use [coffee](https://github.com/node-modules/coffee) :
+
+```js
+const coffee = require('coffee');
+
+describe('test/index.test.js', () => {
+  it('should work', () => {
+    return coffee.fork('/path/to/cli')
+      // .debug()
+      .waitForPrompt()
+      .write('tz\n')
+      .writeKey('DOWN', 'ENTER')
+      .write('this is a desc\n')
+      .expect('stdout', /{ name: 'tz', type: 'simple' }/)
+      .expect('stdout', /{ description: 'this is a desc' }/)
+      .expect('code', 0)
+      .end();
+  });
+}):
 ```
