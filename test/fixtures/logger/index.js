@@ -3,23 +3,14 @@
 const Command = require('../../../');
 
 class MyCommand extends Command {
-  initOptions() {
-    const opts = super.initOptions();
-    opts.test = {
-      type: 'string',
-      description: 'some argv',
-    };
-    return opts;
-  }
-
-  async run(context) {
+  async run() {
     this.cliName = 'MyCommand';
 
-    this.logger.info('context:', this.context === this.context, this.context === context); // eslint-disable-line no-self-compare
-    this.logger.info('test:', context.argv.test);
-    this.logger.warn('this is a warn');
-    this.logger.error(new Error('this is an error'));
-    this.logger.debug('this is a debug');
+    this.logger.info('hello info level'); // eslint-disable-line no-self-compare
+    this.logger.log('hello log level');
+    this.logger.warn('hello warn level');
+    this.logger.error(new Error('hello error level'));
+    this.logger.debug('hello debug level');
   }
 }
 

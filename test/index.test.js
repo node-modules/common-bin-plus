@@ -9,8 +9,8 @@ describe('test/index.test.js', () => {
       .debug()
       .expect('stdout', /\[MyCommand\] context: true true/)
       .expect('stdout', /\[MyCommand\] test: abc/)
-      .expect('stdout', /\[MyCommand\] this is a warn/)
-      .expect('stderr', /\[MyCommand\] Error: this is an error\s*\n\s*at MyCommand.run/)
+      .expect('stderr', /\[MyCommand\] this is a warn/)
+      .expect('stderr', /\[MyCommand\] Error: this is an error\s*\n.*at MyCommand.run/)
       .expect('code', 0)
       .end();
   });
