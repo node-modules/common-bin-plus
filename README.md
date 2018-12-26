@@ -28,6 +28,10 @@ advanced [common-bin](https://github.com/node-modules/common-bin) for cli usage
 npm i common-bin-plus --save
 ```
 
+## Write your own cli
+
+see [common-bin](https://github.com/node-modules/common-bin) for more details.
+
 ## Feature
 
 ### Logger

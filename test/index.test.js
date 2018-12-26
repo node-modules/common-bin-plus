@@ -1,11 +1,13 @@
 'use strict';
 
-const testUtils = require('./test_utils');
+const path = require('path');
+const coffee = require('coffee');
 
 describe('test/index.test.js', () => {
+  const fixtures = path.join(__dirname, 'fixtures');
 
   it('should work', () => {
-    return testUtils.run('my-command', { args: [ '--test=abc' ] })
+    return coffee.fork(`${fixtures}/my-command/bin/cli.js`, [ '--test=abc' ])
       // .debug()
       .expect('stdout', /\[MyCommand\] context: true true/)
       .expect('stdout', /\[MyCommand\] test: abc/)
@@ -16,7 +18,7 @@ describe('test/index.test.js', () => {
   });
 
   it('should handler error', () => {
-    return testUtils.run('error')
+    return coffee.fork(`${fixtures}/error/bin/cli.js`)
       // .debug()
       .expect('stderr', /\[MyCommand\] Error: oh, an error\s*\n.*at MyCommand.run/)
       .expect('code', 1)
