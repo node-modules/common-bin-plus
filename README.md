@@ -11,12 +11,12 @@ advanced [common-bin](https://github.com/node-modules/common-bin) for cli usage
 
 [npm-image]: https://img.shields.io/npm/v/common-bin-plus.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/common-bin-plus
-[travis-image]: https://img.shields.io/travis/{{org}}/common-bin-plus.svg?style=flat-square
-[travis-url]: https://travis-ci.org/{{org}}/common-bin-plus
-[codecov-image]: https://codecov.io/gh/{{org}}/common-bin-plus/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/{{org}}/common-bin-plus
-[david-image]: https://img.shields.io/david/{{org}}/common-bin-plus.svg?style=flat-square
-[david-url]: https://david-dm.org/{{org}}/common-bin-plus
+[travis-image]: https://img.shields.io/travis/node-modules/common-bin-plus.svg?style=flat-square
+[travis-url]: https://travis-ci.org/node-modules/common-bin-plus
+[codecov-image]: https://codecov.io/gh/node-modules/common-bin-plus/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/node-modules/common-bin-plus
+[david-image]: https://img.shields.io/david/node-modules/common-bin-plus.svg?style=flat-square
+[david-url]: https://david-dm.org/node-modules/common-bin-plus
 [snyk-image]: https://snyk.io/test/npm/common-bin-plus/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/common-bin-plus
 [download-image]: https://img.shields.io/npm/dm/common-bin-plus.svg?style=flat-square
