@@ -21,14 +21,10 @@
     "webstorm-disable-index": "^1.2.0"
   },
   "files": [
-    "index.js",
-    "index.d.ts",
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "types": "index.d.ts",
-  "engines": {
-    "node": ">=8.0.0"
-  },
   "scripts": {
     "autod": "autod",
     "lint": "eslint .",
