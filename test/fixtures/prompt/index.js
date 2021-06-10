@@ -8,6 +8,11 @@ class MyCommand extends Command {
     let answers = await this.prompt([
       {
         type: 'input',
+        name: 'silent',
+        message: 'silent:',
+      },
+      {
+        type: 'input',
         name: 'name',
         message: 'What is your name:',
       }, {
@@ -16,7 +21,9 @@ class MyCommand extends Command {
         message: 'Choose a boilerplate:',
         choices: [ 'empty', 'simple', 'plugin', 'framework' ],
       },
-    ]);
+    ], {
+      silent: 'yes',
+    });
 
     this.logger.info(answers);
 

@@ -36,7 +36,7 @@ see [common-bin](https://github.com/node-modules/common-bin) for more details.
 
 ### Logger
 
-https://github.com/node-modules/zlogger
+https://github.com/unjs/consola
 
 ```js
 this.logger.info('hello info level');
@@ -48,7 +48,7 @@ this.logger.debug('hello debug level');
 `debug` log is disabled by default, you could enable it by:
 
 - command line argv: `--verbose`
-- process env: `DEBUG=CLI`
+- process env: `DEBUG=*` or `DEBUG=${cliName}`
 - programmatically: `logger.level = 'DEBUG'`
 
 ## Prompt
@@ -65,7 +65,7 @@ const answers = await this.prompt([
     message: 'Choose a boilerplate:',
     choices: [ 'empty', 'simple', 'plugin', 'framework' ],
   },
-]);
+], {});
 
 this.logger.info(answers);
 ```
