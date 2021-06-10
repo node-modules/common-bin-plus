@@ -9,3 +9,4 @@ run/
 .nyc_output
 test/fixtures/ts/*.js
 *.lock
+.vscode

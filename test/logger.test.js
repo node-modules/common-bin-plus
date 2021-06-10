@@ -9,67 +9,67 @@ describe('test/logger.test.js', () => {
 
   it('should work', () => {
     return coffee.fork(bin)
-      // .debug()
+      .debug()
       .notExpect('stdout', /\[MyCommand\] hello debug level/)
       .expect('stdout', /\[MyCommand\] hello info level/)
       .expect('stdout', /\[MyCommand\] hello log level/)
       .expect('stderr', /\[MyCommand\] hello warn level/)
-      .expect('stderr', /\[MyCommand\] Error: hello error level\s*\n.*at MyCommand.run/)
+      .expect('stderr', /\[MyCommand\] hello error level\s*\n.*at MyCommand.run/)
       .expect('code', 0)
       .end();
   });
 
   it('should log debug with --verbose', () => {
     return coffee.fork(bin, [ '--verbose' ])
-      // .debug()
+      .debug()
       .expect('stdout', /\[MyCommand\] hello debug level/)
       .expect('stdout', /\[MyCommand\] hello info level/)
       .expect('stdout', /\[MyCommand\] hello log level/)
       .expect('stderr', /\[MyCommand\] hello warn level/)
-      .expect('stderr', /\[MyCommand\] Error: hello error level\s*\n.*at MyCommand.run/)
+      .expect('stderr', /\[MyCommand\] hello error level\s*\n.*at MyCommand.run/)
       .expect('code', 0)
       .end();
   });
 
   it('should log debug with ENV', () => {
-    return coffee.fork(bin, [], { env: { DEBUG: 'CLI' } })
-      // .debug()
+    return coffee.fork(bin, [], { env: { DEBUG: 'MyCommand', NODE_ENV: 'test' } })
+      .debug()
       .expect('stdout', /\[MyCommand\] hello debug level/)
       .expect('stdout', /\[MyCommand\] hello info level/)
       .expect('stdout', /\[MyCommand\] hello log level/)
       .expect('stderr', /\[MyCommand\] hello warn level/)
-      .expect('stderr', /\[MyCommand\] Error: hello error level\s*\n.*at MyCommand.run/)
+      .expect('stderr', /\[MyCommand\] hello error level\s*\n.*at MyCommand.run/)
       .expect('code', 0)
       .end();
   });
 
   it('should log debug with ENV multi', () => {
-    return coffee.fork(bin, [], { env: { DEBUG: 'common-bin,CLI' } })
-      // .debug()
+    return coffee.fork(bin, [], { env: { DEBUG: 'common-bin,MyCommand', NODE_ENV: 'test' } })
+      .debug()
       .expect('stdout', /\[MyCommand\] hello debug level/)
       .expect('stdout', /\[MyCommand\] hello info level/)
       .expect('stdout', /\[MyCommand\] hello log level/)
       .expect('stderr', /\[MyCommand\] hello warn level/)
-      .expect('stderr', /\[MyCommand\] Error: hello error level\s*\n.*at MyCommand.run/)
+      .expect('stderr', /\[MyCommand\] hello error level\s*\n.*at MyCommand.run/)
       .expect('code', 0)
       .end();
   });
 
   it('should log debug with ENV *', () => {
-    return coffee.fork(bin, [], { env: { DEBUG: '*' } })
-      // .debug()
+    return coffee.fork(bin, [], { env: { DEBUG: '*', NODE_ENV: 'test' } })
+      .debug()
       .expect('stdout', /\[MyCommand\] hello debug level/)
       .expect('stdout', /\[MyCommand\] hello info level/)
       .expect('stdout', /\[MyCommand\] hello log level/)
       .expect('stderr', /\[MyCommand\] hello warn level/)
-      .expect('stderr', /\[MyCommand\] Error: hello error level\s*\n.*at MyCommand.run/)
+      .expect('stderr', /\[MyCommand\] hello error level\s*\n.*at MyCommand.run/)
       .expect('code', 0)
       .end();
   });
 
   it('should not log debug', () => {
-    return coffee.fork(bin, [], { env: { DEBUG: 'CLI_TEST' } })
-      // .debug()
+    return coffee.fork(bin, [], { env: { DEBUG: 'CLI_TEST', NODE_ENV: 'test' } })
+      .debug()
       .notExpect('stdout', /\[MyCommand\] hello debug level/)
       .expect('code', 0)
       .end();

@@ -9,12 +9,12 @@ describe('test/index.test.js', () => {
 
   it('should work', () => {
     return coffee.fork(bin)
-      // .debug()
+      .debug()
       .waitForPrompt()
       .write('tz\n')
       .writeKey('DOWN', 'ENTER')
       .write('this is a desc\n')
-      .expect('stdout', /{ name: 'tz', type: 'simple' }/)
+      .expect('stdout', /{ silent: 'yes', name: 'tz', type: 'simple' }/)
       .expect('stdout', /{ description: 'this is a desc' }/)
       .expect('code', 0)
       .end();

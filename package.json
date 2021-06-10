@@ -4,21 +4,22 @@
   "description": "advanced common-bin for cli usage",
   "main": "./lib/command",
   "dependencies": {
-    "common-bin": "^2.8.0",
-    "inquirer": "^6.2.1",
-    "zlogger": "^2.0.0"
+    "common-bin": "^2.9.0",
+    "consola": "^2.15.3",
+    "enabled": "^2.0.0",
+    "inquirer": "^8.1.0",
+    "std-env": "^2.3.0"
   },
   "devDependencies": {
-    "assert-file": "^1.0.0",
-    "autod": "^3.0.1",
-    "coffee": "^5.2.0",
-    "egg-bin": "^4.9.0",
-    "egg-ci": "^1.11.0",
-    "eslint": "^5.11.0",
-    "eslint-config-egg": "^7.1.0",
-    "mm": "^2.4.1",
-    "typescript": "^3.2.2",
-    "webstorm-disable-index": "^1.2.0"
+    "assert-file": "^1",
+    "autod": "^3.1.1",
+    "coffee": "^5.4.0",
+    "egg-bin": "^4.16.2",
+    "egg-ci": "^1.18.0",
+    "eslint": "^7.28.0",
+    "eslint-config-egg": "^9.0.0",
+    "mm": "^2",
+    "typescript": "^4.3.2"
   },
   "files": [
     "lib",
@@ -35,7 +36,8 @@
     "pkgfiles": "egg-bin pkgfiles"
   },
   "ci": {
-    "version": "8, 10, 11"
+    "version": "12, 14",
+    "type": "github"
   },
   "eslintIgnore": [
     "coverage",

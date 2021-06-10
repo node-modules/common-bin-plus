@@ -1,11 +1,9 @@
 import { Inquirer } from 'inquirer';
 import * as CommonBin from 'common-bin';
+import { Consola } from 'consola';
 
 declare namespace CommonBinPlus {
-  export interface Logger extends Console {
-    level: string;
-  }
-  
+  export class Logger extends Consola {}
   export interface OptionDesc {
     type: string;
     description: string;
@@ -29,7 +27,6 @@ declare class CommonBinPlus<T extends CommonBin.Context = CommonBin.Context> ext
 
   /**
    * built-in logger
-   * @see https://github.com/node-modules/zlogger
    */
   logger: CommonBinPlus.Logger;
 
