@@ -1,5 +1,5 @@
 import { Inquirer } from 'inquirer';
-import * as CommonBin from 'common-bin';
+import CommonBin from 'common-bin';
 import { Consola } from 'consola';
 
 declare namespace CommonBinPlus {
