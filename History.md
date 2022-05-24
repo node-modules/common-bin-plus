@@ -1,4 +1,10 @@
 
+2.0.1 / 2022-05-24
+==================
+
+**fixes**
+  * [[`a35f876`](http://github.com/node-modules/common-bin-plus/commit/a35f87644fb33ffbd410d7556e79e374dcb293e1)] - fix: remove import * as (#5) (mansonchor.github.com <<mansonchor1987@gmail.com>>)
+
 2.0.0 / 2021-06-10
 ==================
 
