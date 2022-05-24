@@ -26,6 +26,11 @@ declare class CommonBinPlus<T extends CommonBin.Context = CommonBin.Context> ext
   prompt: Inquirer['prompt'];
 
   /**
+   * defined cliName for logger prefix
+   */
+  cliName?: string;
+
+  /**
    * built-in logger
    */
   logger: CommonBinPlus.Logger;
