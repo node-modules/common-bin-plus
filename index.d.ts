@@ -1,5 +1,5 @@
 import { Inquirer } from 'inquirer';
-import * as CommonBin from 'common-bin';
+import CommonBin from 'common-bin';
 import { Consola } from 'consola';
 
 declare namespace CommonBinPlus {
@@ -24,6 +24,11 @@ declare class CommonBinPlus<T extends CommonBin.Context = CommonBin.Context> ext
    * @see https://github.com/SBoudrias/Inquirer.js
    */
   prompt: Inquirer['prompt'];
+
+  /**
+   * defined cliName for logger prefix
+   */
+  cliName?: string;
 
   /**
    * built-in logger
